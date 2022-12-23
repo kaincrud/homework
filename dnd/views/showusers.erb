@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <tr>
+    <th>Пошта</th>
+    <th>ПІБ</th>
+    <th>Ім'я персонажа</th>
+    <th>Клас</th>
+    <th>Раса</th>
+  </tr>
+
+  <% @results.each do |row| %>
+
+    <tr>
+      <td><%= row['email'] %></td>
+      <td><%= row['username'] %></td>
+      <td><%= row['charactername'] %></td>
+      <td><%= row['class'] %></td>
+      <td><%= row['race'] %></td>
+    </tr>
+
+  <% end %>
+
+</table>

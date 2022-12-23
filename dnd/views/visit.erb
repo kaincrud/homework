@@ -1,0 +1,85 @@
+<h2>Записатись</h2>
+
+<form action="/visit" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Електронна пошта</label>
+    <input name="email" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Введіть пошту" value="<%=@email%>">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ваше ПІБ</label>
+    <input name="username" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Введіть ПІБ" value="<%=@username%>">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ім'я Вашого персонажа</label>
+    <input name="charactername" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Введіть ім'я персонажа" value="<%=@charactername%>">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Бек та опис Вашого персонажа</label>
+    <input name="back"  class="form-control" rows="3" placeholder="Введіть бек та опис" value="<%=@back%>">
+  </div>
+  <br></br>
+  <select name="class" class="form-control" aria-label="Default select example">
+    <option <%= @class == 'Вибір класа персонажа'?'selected' : '' %>> Вибір класа персонажа</option>
+    <option <%= @class == 'Бард'?'selected' : ''%>> Бард</option>
+    <option <%= @class == 'Варвар'?'selected' : ''%>> Варвар</option>
+    <option <%= @class == 'Воїн'?'selected' : ''%>> Воїн</option>
+    <option <%= @class == 'Візард'?'selected' : ''%>> Візард</option>
+    <option <%= @class == 'Друїд'?'selected' : ''%>> Друїд</option>
+    <option <%= @class == 'Жрець'?'selected' : ''%>> Жрець</option>
+    <option <%= @class == 'Монах'?'selected' : ''%>> Монах</option>
+    <option <%= @class == 'Паладин'?'selected' : ''%>> Паладин</option>
+    <option <%= @class == 'Рога'?'selected' : ''%>> Рога</option>
+    <option <%= @class == 'Слідопит'?'selected' : ''%>> Слідопит</option>
+    <option <%= @class == 'Варлок'?'selected' : ''%>> Варлок</option>
+    <option <%= @class == 'Сорсерер'?'selected' : ''%>> Сорсерер</option>
+  </select>
+  <br></br>
+  <select name="race" class="form-control" aria-label="Default select example">
+    <option <%= @race == 'Вибір раси персонажа'?'selected' : '' %>> Вибір раси персонажа</option>
+    <option <%= @race == 'Гном'?'selected' : '' %>> Гном</option>
+    <option <%= @race == 'Дворф'?'selected' : '' %>> Дворф</option>
+    <option <%= @race == 'Дракононароджений'?'selected' : '' %>> Дракононароджений</option>
+    <option <%= @race == 'Напіворк'?'selected' : '' %>> Напіворк</option>
+    <option <%= @race == 'Напіврослик'?'selected' : '' %>> Напіврослик</option>
+    <option <%= @race == 'Напівельф'?'selected' : '' %>> Напівельф</option>
+    <option <%= @race == 'Тифлінг'?'selected' : '' %>> Тифлінг</option>
+    <option <%= @race == 'Людина'?'selected' : '' %>> Людина</option>
+    <option <%= @race == 'Ельф'?'selected' : '' %>> Ельф</option>
+  </select>
+  <br></br>
+  <select name="time" class="form-control" aria-label="Default select example">
+    <option <%= @time == 'На який термін Ви хочете гру'?'selected' : '' %>> На який термін Ви хочете гру</option>
+    <option <%= @time == 'Ваншот'?'selected' : '' %>> Ваншот</option>
+    <option <%= @time == 'Серія ігр'?'selected' : '' %>> Серія ігр</option>
+    <option <%= @time == 'Кампейн'?'selected' : '' %>> Кампейн</option>
+  </select>
+  <br></br>
+  <div class="mb-3">
+  <label class="form-label">Колір шкіри Вашого персонажа</label>
+  <select id="color" name="color">
+    <option value="#7bd148">Green</option>
+    <option value="#5484ed">Bold blue</option>
+    <option value="#a4bdfc">Blue</option>
+    <option value="#46d6db">Turquoise</option>
+    <option value="#7ae7bf">Light green</option>
+    <option value="#51b749">Bold green</option>
+    <option value="#fbd75b">Yellow</option>
+    <option value="#ffb878">Orange</option>
+    <option value="#ff887c">Red</option>
+    <option value="#dc2127">Bold red</option>
+    <option value="#dbadff">Purple</option>
+    <option value="#e1e1e1">Gray</option>
+    <option value="#000">Black</option>
+    <option value="#d63384">Pink</option>
+  </select>
+  </div>
+  <button type="submit" class="btn btn-warning">Записатись</button>
+
+
+</form>
+
+<script type="text/javascript">
+  $(function(){
+      $('#color').simplecolorpicker();
+  });
+</script>
